@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Bubs ❤️</title>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:Georgia,"Times New Roman",serif;
+    color:#5d4057;
+    background:linear-gradient(135deg,#fff5f7,#f8f1ff 50%,#eef8ff);
+    overflow-x:hidden;
+  }
+  .sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .heart,.star{
+    position:absolute;
+    animation:float 9s linear infinite;
+    opacity:.65;
+  }
+  .heart{font-size:22px}
+  .star{font-size:15px}
+  @keyframes float{
+    0%{transform:translateY(110vh) rotate(0deg);opacity:0}
+    10%{opacity:.7}
+    90%{opacity:.7}
+    100%{transform:translateY(-15vh) rotate(360deg);opacity:0}
+  }
+  .wrap{position:relative;z-index:1;max-width:900px;margin:auto;padding:28px 18px 70px}
+  .hero{
+    min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  }
+  .card{
+    width:min(720px,100%);
+    padding:46px 28px;
+    border-radius:32px;
+    background:rgba(255,255,255,.78);
+    box-shadow:0 20px 70px rgba(130,92,130,.18);
+    border:1px solid rgba(255,255,255,.9);
+    backdrop-filter:blur(12px);
+  }
+  .envelope{font-size:70px;animation:bounce 2.4s ease-in-out infinite}
+  @keyframes bounce{50%{transform:translateY(-10px) rotate(-2deg)}}
+  h1{font-size:clamp(42px,8vw,72px);margin:12px 0 8px;color:#9d5c86}
+  h2{font-size:clamp(28px,5vw,42px);margin:0 0 18px;color:#9d5c86}
+  p{font-size:19px;line-height:1.75}
+  .small{font-size:15px;opacity:.8}
+  button{
+    border:0;border-radius:999px;padding:16px 28px;margin-top:18px;
+    font:600 17px Georgia,serif;cursor:pointer;
+    background:#d989b5;color:white;box-shadow:0 9px 25px rgba(190,100,150,.25);
+    transition:.25s transform,.25s box-shadow;
+  }
+  button:hover{transform:translateY(-3px);box-shadow:0 13px 30px rgba(190,100,150,.3)}
+  .hidden{display:none}
+  .section{
+    margin:30px 0;padding:34px 25px;border-radius:28px;
+    background:rgba(255,255,255,.76);box-shadow:0 12px 45px rgba(100,80,120,.12);
+  }
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+  .tile{
+    padding:22px;border-radius:22px;background:linear-gradient(145deg,#fff,#fff6fa);
+    border:1px solid #f3dbe7;cursor:pointer;transition:.25s;
+  }
+  .tile:hover{transform:translateY(-4px)}
+  .tile h3{margin:0 0 8px;color:#a45c87}
+  .reveal{margin-top:12px;line-height:1.6}
+  .meter{height:18px;background:#f0dfea;border-radius:99px;overflow:hidden;margin:20px 0 10px}
+  .fill{height:100%;width:99%;background:linear-gradient(90deg,#e9a3c5,#a88be8);border-radius:99px;animation:pulse 2s infinite}
+  @keyframes pulse{50%{filter:brightness(1.08)}}
+  .quote{
+    text-align:center;font-size:25px;line-height:1.6;color:#8b5278;
+    padding:20px;
+  }
+  .final{
+    text-align:center;padding:55px 25px;border-radius:32px;
+    background:linear-gradient(145deg,#fff1f6,#f6efff);
+  }
+  .big-heart{font-size:76px;animation:heartbeat 1.3s infinite}
+  @keyframes heartbeat{20%{transform:scale(1.08)}40%{transform:scale(1)}60%{transform:scale(1.08)}}
+  #secret{transition:.5s}
+  .burst{position:fixed;pointer-events:none;font-size:25px;z-index:10;animation:burst 1.4s ease-out forwards}
+  @keyframes burst{
+    0%{transform:translate(0,0) scale(.5);opacity:1}
+    100%{transform:translate(var(--x),var(--y)) rotate(30deg) scale(1.2);opacity:0}
+  }
+  footer{text-align:center;margin-top:30px;font-size:14px;opacity:.65}
+</style>
+</head>
+<body>
+<div class="sky" id="sky"></div>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="card">
+      <div class="envelope">💌</div>
+      <div class="small">A very important message for...</div>
+      <h1>My Bubs ❤️</h1>
+      <p>I know the distance has been a little rude lately...</p>
+      <p>So I made you a tiny piece of my heart.</p>
+      <button onclick="openHeart()">Click to open my heart 💗</button>
+    </div>
+  </section>
+
+  <div id="letter" class="hidden">
+    <section class="section">
+      <h2>For you, Bubs 🌙</h2>
+      <p>
+        I miss you. More than I probably say sometimes.
+        There are little moments where I catch myself thinking about you,
+        and suddenly the distance feels very real.
+      </p>
+      <p>
+        But then I think about us — and about all the things we still have
+        waiting for us — and I remember that this is only a chapter.
+      </p>
+      <div class="quote">“Some things are worth waiting for.” ❤️</div>
+    </section>
+
+    <section class="section">
+      <h2>How much do I miss you?</h2>
+      <p>Let's just say... the meter is not doing very well. 😂</p>
+      <div class="meter"><div class="fill"></div></div>
+      <p style="text-align:center"><strong>99% Bubs-shaped thoughts detected.</strong></p>
+    </section>
+
+    <section class="section">
+      <h2>Little things I love ❤️</h2>
+      <div class="grid">
+        <div class="tile" onclick="reveal(this)">
+          <h3>💗 You</h3>
+          <div class="reveal hidden">Because somehow, out of all the people in the world, you became my person.</div>
+        </div>
+        <div class="tile" onclick="reveal(this)">
+          <h3>🥰 My Bubs</h3>
+          <div class="reveal hidden">I love that I get to call you Bubs. It's ours, and somehow that makes it even sweeter.</div>
+        </div>
+        <div class="tile" onclick="reveal(this)">
+          <h3>🌊 The lighthouse</h3>
+          <div class="reveal hidden">I miss going to the lighthouse with you. I can't wait for that to be one of the first things we do when you're back.</div>
+        </div>
+        <div class="tile" onclick="reveal(this)">
+          <h3>✨ Us</h3>
+          <div class="reveal hidden">Because even with miles between us, you're still part of my everyday thoughts, my plans, and my heart.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The very important reunion plan 🍔</h2>
+      <p style="text-align:center">
+        Step 1: Get Bubs back. ❤️<br>
+        Step 2: Go to the lighthouse. 🌊<br>
+        Step 3: Double chilli cheese burgers. 🍔<br>
+        Step 4: Chilli cheese wedges. 🧀<br>
+        Step 5: Caramel iced latte. 🧋<br>
+        Step 6: Pretend we didn't plan this entire thing while apart. 😂
+      </p>
+      <div style="text-align:center">
+        <button onclick="celebrate()">I accept this plan 😌❤️</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Until then... 🌌</h2>
+      <p>
+        I want you to remember that the distance doesn't change how much
+        you mean to me. It doesn't erase the memories, the laughs, the
+        little moments, or everything I picture us doing together.
+      </p>
+      <p>
+        There are still so many ordinary days I want with you.
+        More lighthouse visits. More food dates. More coffees.
+        More laughing over absolutely nothing.
+        More of <strong>us</strong>.
+      </p>
+    </section>
+
+    <section class="section" style="text-align:center">
+      <h2>One last little secret... 👀</h2>
+      <button onclick="secret()">Don't click this</button>
+      <p id="secret" class="hidden">
+        I love you, Bubs. ❤️<br>
+        And yes... I am already looking forward to that burger. 😂
+      </p>
+    </section>
+
+    <section class="final">
+      <div class="big-heart">❤️</div>
+      <h2>The distance is temporary, Bubs.</h2>
+      <p>
+        <strong>You are not.</strong>
+      </p>
+      <p>
+        Come back to me soon. 🥹❤️
+      </p>
+      <p class="small">Made with an unreasonable amount of love, just for you.</p>
+    </section>
+
+    <footer>Forever saving a seat for you. ❤️</footer>
+  </div>
+</main>
+
+<script>
+function openHeart(){
+  document.getElementById('letter').classList.remove('hidden');
+  setTimeout(()=>document.getElementById('letter').scrollIntoView({behavior:'smooth'}),100);
+  burstHearts(18);
+}
+function reveal(el){
+  const r=el.querySelector('.reveal');
+  r.classList.toggle('hidden');
+  if(!r.classList.contains('hidden')) burstHearts(6);
+}
+function secret(){
+  const s=document.getElementById('secret');
+  s.classList.remove('hidden');
+  burstHearts(25);
+}
+function celebrate(){ burstHearts(35); }
+function burstHearts(n){
+  for(let i=0;i<n;i++){
+    const e=document.createElement('div');
+    e.className='burst';
+    e.textContent=['❤️','💕','💗','✨','💖'][Math.floor(Math.random()*5)];
+    e.style.left=(50+Math.random()*8-4)+'vw';
+    e.style.top=(55+Math.random()*8-4)+'vh';
+    e.style.setProperty('--x',(Math.random()*500-250)+'px');
+    e.style.setProperty('--y',(Math.random()*-500-80)+'px');
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),1500);
+  }
+}
+const sky=document.getElementById('sky');
+for(let i=0;i<32;i++){
+  const e=document.createElement('div');
+  e.className=Math.random()>.35?'heart':'star';
+  e.textContent=e.className==='heart'?'❤':'✦';
+  e.style.left=Math.random()*100+'%';
+  e.style.animationDelay=(Math.random()*9)+'s';
+  e.style.animationDuration=(7+Math.random()*7)+'s';
+  sky.appendChild(e);
+}
+</script>
+</body>
+</html>
